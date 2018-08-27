@@ -23,13 +23,13 @@ func main() {
 	pb.RegisterGCDServiceServer(s, &server{})
 	reflection.Register(s)
 
-	if err := s.Serve(los); err != nil {
+	if err := s.Serve(lis); err != nil {
 		log.Fatalf("Failed to serve: %v", err)
 	}
 }
 
 func (s *server) Compute(ctx context.Context, r *pb.GCDRequest) (*pb.GCDResponse, error) {
-	a, b := r.A, r.b
+	a, b := r.A, r.B
 	for b != 0 {
 		a, b = b, a%b
 	}
