@@ -1,6 +1,6 @@
 FROM golang:1.9.1
 
-WORKDIR /Users/richardwalker/Development/go/src/github.com/f00stx/grpc-demo/api
+WORKDIR /go/src/github.com/f00stx/grpc-demo/api
 
 COPY api .
 COPY pb ../pb
